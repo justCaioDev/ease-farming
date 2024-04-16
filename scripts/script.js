@@ -4,7 +4,19 @@ const handItem = document.querySelector("#hand-item");
 const trigo = document.querySelector("#trigo");
 const loja = document.querySelector("#store");
 const modal = document.querySelector(".modal-store");
-const fechar = document.querySelector("#fechar")
+const fechar = document.querySelector("#fechar");
+const dinheiro = document.querySelector("#dinheiro");
+const acai = document.querySelector("#acai");
+const amora = document.querySelector("#amora");
+const couveFlor = document.querySelector("#couve-flor");
+const morango = document.querySelector("#morango");
+const items = document.querySelector("#items");
+
+const buyTrigo = document.querySelector("#buy-trigo");
+const buyCouveFlor = document.querySelector("#buy-couve-flor");
+const buyMorango = document.querySelector("#buy-morango");
+const buyAmora = document.querySelector("#buy-amora");
+const buyAcai = document.querySelector("#buy-acai");
 
 const plant0 = document.querySelector("#plant");
 const plant1 = document.querySelector("#plant1");
@@ -20,8 +32,10 @@ const colher3 = document.querySelector("#colher3");
 const colher4 = document.querySelector("#colher4");
 const colher5 = document.querySelector("#colher5");
 
+let dinheiroJogador = 0;
+
 function plantar() {
-    if (handItem.getAttribute("src") == "assets/trigo.png") {
+    if (handItem.getAttribute("src") == "assets/trigo.png" && plant0.getAttribute("src") == "assets/earth.png") {
         plant0.setAttribute("src", "assets/trigo.png")
         plant1.setAttribute("src", "assets/trigo.png")
         plant2.setAttribute("src", "assets/trigo.png")
@@ -29,7 +43,51 @@ function plantar() {
         plant4.setAttribute("src", "assets/trigo.png")
         plant5.setAttribute("src", "assets/trigo.png")
 
-        setTimeout(tempoPlantacao, 10000)
+        setTimeout(tempoPlantacao, 15000)
+    }
+
+    if (handItem.getAttribute("src") == "assets/couve-flor.webp" && plant0.getAttribute("src") == "assets/earth.png") {
+        plant0.setAttribute("src", "assets/couve-flor.webp")
+        plant1.setAttribute("src", "assets/couve-flor.webp")
+        plant2.setAttribute("src", "assets/couve-flor.webp")
+        plant3.setAttribute("src", "assets/couve-flor.webp")
+        plant4.setAttribute("src", "assets/couve-flor.webp")
+        plant5.setAttribute("src", "assets/couve-flor.webp")
+
+        setTimeout(tempoPlantacao, 45000)
+    } 
+
+    if (handItem.getAttribute("src") == "assets/morango.webp" && plant0.getAttribute("src") == "assets/earth.png") {
+        plant0.setAttribute("src", "assets/morango.webp")
+        plant1.setAttribute("src", "assets/morango.webp")
+        plant2.setAttribute("src", "assets/morango.webp")
+        plant3.setAttribute("src", "assets/morango.webp")
+        plant4.setAttribute("src", "assets/morango.webp")
+        plant5.setAttribute("src", "assets/morango.webp")
+
+        setTimeout(tempoPlantacao, 60000)
+    }
+
+    if (handItem.getAttribute("src") == "assets/amora.webp" && plant0.getAttribute("src") == "assets/earth.png") {
+        plant0.setAttribute("src", "assets/amora.webp")
+        plant1.setAttribute("src", "assets/amora.webp")
+        plant2.setAttribute("src", "assets/amora.webp")
+        plant3.setAttribute("src", "assets/amora.webp")
+        plant4.setAttribute("src", "assets/amora.webp")
+        plant5.setAttribute("src", "assets/amora.webp")
+
+        setTimeout(tempoPlantacao, 90000)
+    }
+    
+    if (handItem.getAttribute("src") == "assets/acai.png" && plant0.getAttribute("src") == "assets/earth.png") {
+        plant0.setAttribute("src", "assets/acai.png")
+        plant1.setAttribute("src", "assets/acai.png")
+        plant2.setAttribute("src", "assets/acai.png")
+        plant3.setAttribute("src", "assets/acai.png")
+        plant4.setAttribute("src", "assets/acai.png")
+        plant5.setAttribute("src", "assets/acai.png")
+
+        setTimeout(tempoPlantacao, 186000)
     }
 }
 
@@ -43,6 +101,27 @@ function tempoPlantacao() {
 }
 
 function colherPlantacao() {
+    if (plant0.getAttribute("src") == "assets/trigo.png") {
+        dinheiroJogador = dinheiroJogador + 13
+    }
+
+    if (plant0.getAttribute("src") == "assets/couve-flor.webp") {
+        dinheiroJogador = dinheiroJogador + 32
+    }
+
+    if (plant0.getAttribute("src") == "assets/morango.webp") {
+        dinheiroJogador = dinheiroJogador + 78
+    }
+
+    if (plant0.getAttribute("src") == "assets/amora.webp") {
+        dinheiroJogador = dinheiroJogador + 150
+    }
+
+    if (plant0.getAttribute("src") == "assets/acai.png") {
+        dinheiroJogador = dinheiroJogador + 375
+    }
+
+
     colher0.classList.remove("colher")
     colher1.classList.remove("colher")
     colher2.classList.remove("colher")
@@ -56,6 +135,59 @@ function colherPlantacao() {
     plant3.setAttribute("src", "assets/earth.png")
     plant4.setAttribute("src", "assets/earth.png")
     plant5.setAttribute("src", "assets/earth.png")
+
+    dinheiro.textContent = dinheiroJogador
+
+}
+
+function comprarTrigo() {
+    if (dinheiroJogador >= 10) {
+        dinheiroJogador = dinheiroJogador - 10
+
+        dinheiro.textContent = dinheiroJogador
+    } else {
+        alert("Dinheiro insuficiente!")
+    }
+}
+
+function comprarCouveFlor() {
+    if (dinheiroJogador >= 25) {
+        dinheiroJogador = dinheiroJogador - 25
+
+        dinheiro.textContent = dinheiroJogador
+    } else {
+        alert("Dinheiro insuficiente!")
+    }
+}
+
+function comprarMorango() {
+    if (dinheiroJogador >= 55) {
+        dinheiroJogador = dinheiroJogador - 55
+
+        dinheiro.textContent = dinheiroJogador
+    } else {
+        alert("Dinheiro insuficiente!")
+    }
+}
+
+function comprarAmora() {
+    if (dinheiroJogador >= 120) {
+        dinheiroJogador = dinheiroJogador - 120
+
+        dinheiro.textContent = dinheiroJogador
+    } else {
+        alert("Dinheiro insuficiente!")
+    }
+}
+
+function comprarAcai() {
+    if (dinheiroJogador >= 300) {
+        dinheiroJogador = dinheiroJogador - 300
+
+        dinheiro.textContent = dinheiroJogador
+    } else {
+        alert("Dinheiro insuficiente!")
+    }
 }
 
 function openModal() {
@@ -76,6 +208,22 @@ hand.addEventListener("click", () => {
 
 trigo.addEventListener("click", ()=> {
     handItem.setAttribute("src", "assets/trigo.png");
+});
+
+couveFlor.addEventListener("click", ()=> {
+    handItem.setAttribute("src", "assets/couve-flor.webp");
+});
+
+morango.addEventListener("click", ()=> {
+    handItem.setAttribute("src", "assets/morango.webp");
+});
+
+amora.addEventListener("click", ()=> {
+    handItem.setAttribute("src", "assets/amora.webp");
+});
+
+acai.addEventListener("click", ()=> {
+    handItem.setAttribute("src", "assets/acai.png");
 });
 
 plant0.addEventListener("click", () => {
@@ -112,6 +260,27 @@ loja.addEventListener("click", ()=> {
 fechar.addEventListener("click", ()=> {
     closeModal();
 })
+
+buyTrigo.addEventListener("click", ()=> {
+    comprarTrigo();
+})
+
+buyCouveFlor.addEventListener("click", ()=> {
+    comprarCouveFlor();
+})
+
+buyMorango.addEventListener("click", ()=> {
+    comprarMorango();
+})
+
+buyAmora.addEventListener("click", ()=> {
+    comprarAmora();
+})
+
+buyAcai.addEventListener("click", ()=> {
+    comprarAcai();
+})
+
 
 
 
