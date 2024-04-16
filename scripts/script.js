@@ -21,13 +21,13 @@ const colher4 = document.querySelector("#colher4");
 const colher5 = document.querySelector("#colher5");
 
 function plantar() {
-    if (handItem.getAttribute("src") == "../assets/trigo.png") {
-        plant0.setAttribute("src", "../assets/trigo.png")
-        plant1.setAttribute("src", "../assets/trigo.png")
-        plant2.setAttribute("src", "../assets/trigo.png")
-        plant3.setAttribute("src", "../assets/trigo.png")
-        plant4.setAttribute("src", "../assets/trigo.png")
-        plant5.setAttribute("src", "../assets/trigo.png")
+    if (handItem.getAttribute("src") == "assets/trigo.png") {
+        plant0.setAttribute("src", "assets/trigo.png")
+        plant1.setAttribute("src", "assets/trigo.png")
+        plant2.setAttribute("src", "assets/trigo.png")
+        plant3.setAttribute("src", "assets/trigo.png")
+        plant4.setAttribute("src", "assets/trigo.png")
+        plant5.setAttribute("src", "assets/trigo.png")
 
         setTimeout(tempoPlantacao, 10000)
     }
@@ -50,12 +50,12 @@ function colherPlantacao() {
     colher4.classList.remove("colher")
     colher5.classList.remove("colher")
 
-    plant0.setAttribute("src", "../assets/earth.png")
-    plant1.setAttribute("src", "../assets/earth.png")
-    plant2.setAttribute("src", "../assets/earth.png")
-    plant3.setAttribute("src", "../assets/earth.png")
-    plant4.setAttribute("src", "../assets/earth.png")
-    plant5.setAttribute("src", "../assets/earth.png")
+    plant0.setAttribute("src", "assets/earth.png")
+    plant1.setAttribute("src", "assets/earth.png")
+    plant2.setAttribute("src", "assets/earth.png")
+    plant3.setAttribute("src", "assets/earth.png")
+    plant4.setAttribute("src", "assets/earth.png")
+    plant5.setAttribute("src", "assets/earth.png")
 }
 
 function openModal() {
@@ -98,7 +98,7 @@ plant5.addEventListener("click", () => {
 });
 
 colher0.addEventListener("click", ()=> {
-    if (handItem.getAttribute("src") == "../assets/hand.webp") {
+    if (handItem.getAttribute("src") == "assets/hand.webp") {
         colherPlantacao();
     } else {
         alert("Selecione a mão para colher!")
