@@ -67,15 +67,15 @@ function closeModal() {
 }
 
 regador.addEventListener("click", () => {
-   handItem.setAttribute("src", "../assets/regador.png");
+   handItem.setAttribute("src", "assets/regador.png");
 });
 
 hand.addEventListener("click", () => {
-    handItem.setAttribute("src", "../assets/hand.webp");
+    handItem.setAttribute("src", "assets/hand.webp");
 });
 
 trigo.addEventListener("click", ()=> {
-    handItem.setAttribute("src", "../assets/trigo.png");
+    handItem.setAttribute("src", "assets/trigo.png");
 });
 
 plant0.addEventListener("click", () => {
