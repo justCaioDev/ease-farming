@@ -1,0 +1,131 @@
+@keyframes spin {
+    to {
+        transform: rotate(0deg);
+    }
+    from {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes appear-button {
+    0% {
+        scale: 0%;
+    }
+    80% {
+        scale: 120%;
+    }
+    100% {
+        scale: 100%;
+    }
+}
+
+/* @keyframes desapper-load-spin {
+    to {
+        display: block;
+    }
+    from {
+        display: none;
+    }
+} */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+
+    font-family: "K2D", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.bg-menu {
+    width: 100%;
+    height: 100vh;
+
+    background-image: url(../assets/Background-menu.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+}
+
+.container-menu {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.container-menu h1 {
+    margin: auto;
+
+    font-size: 96px;
+    color: #FDE46E;
+    text-shadow:
+    -1px -1px 0 #374C3E,  
+     1px -1px 0 #374C3E,
+    -1px  1px 0 #374C3E,
+     1px  1px 0 #374C3E;
+}
+
+.start {
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+
+    margin: auto;
+    width: 400px;
+    height: 100px;
+}
+
+.start button {
+    position: absolute;
+
+    scale: 0;
+    width: 400px;
+    height: 100px;
+    margin: auto;
+
+    border-radius: 10px;
+    border: 5px solid #374C3E;
+    background-color: #68FE77;
+    cursor: pointer;
+    box-shadow: 0px 10px 10px  rgba(0, 0, 0, 0.531);
+
+    animation: appear-button .5s ease-in-out forwards;
+    animation-delay: 3s;
+}
+
+.start button p {
+    font-family: "K2D", sans-serif;
+    font-size: 64px;
+    font-weight: 600;
+    font-style: normal;
+    color: #2C3830;
+}
+
+.start button:hover {
+    background-color: #1cff32;
+    scale: 105%;
+}
+
+.start .load {
+    width: 50px;
+    height: 50px;
+    margin: auto;
+
+    border: 5px solid aliceblue;
+    border-radius: 50%;
+    border-bottom-color: transparent;
+    animation: spin 1s linear 10;
+    /* animation: desappear-load-spin 1s backwards; */
+
+}

@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 100%;
+    height: 100vh;
+}
+
+.bg-grass {
+    background-image: url(../assets/Solo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.farm {
+    width: auto;
+    height: auto;
+    margin: 0px 50px 100px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
+    align-content: center;
+}
+
+.plant-box {
+    position: relative;
+}
+
+.plant-box .plant {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.farm img {
+    width: 100px;
+    height: 100px;
+
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.farm img:hover {
+    scale: 105%;
+}
+
+.house {
+    margin-bottom: 200px;
+    width: 500px;
+    height: 480px;
+}
+
+.hand-item {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+
+    width: 120px;
+    height: 120px;
+
+    background-color: rgb(206, 211, 217);
+    border: 5px solid aliceblue;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.hand-item img {
+    width: 100%;
+    padding: 10px;
+}
+
+.items {
+    display: flex;
+    
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    
+    width: auto;
+    height: 100px;
+}
+
+.items img {
+    width: 100%;
+    padding: 10px;
+
+    cursor: pointer;
+}
+
+.items img:hover {
+   scale: 110%;
+}
+
+.pronto {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    padding: 10px;
+
+    z-index: -1;
+}
+
+.colher {
+    z-index: 20;
+}
+
+.store {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+
+    width: 120px;
+    height: 50px;
+
+    border: 3px solid #374C3E;
+    border-radius: 5px;
+    background-color: #fff53a;
+
+    cursor: pointer;
+}
+
+.store:hover {
+    background-color: #faf589;
+}
+
+.store p {
+    font-family: "K2D", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+
+    color: #2C3830;
+}
+
+.modal-store {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+
+    width: 80%;
+    height: 75%;
+
+    border: 5px solid #2C3830;
+    box-shadow: 1px 2px 50px 40px rgba(0, 0, 0, 0.556);
+    border-radius: 10px;
+    background-color: #faf589;
+
+    z-index: 999;
+    display: none;
+}
+
+.open-modal {
+    display: flex;
+}
+
+.container-plants { 
+    display: flex;
+    margin: auto;
+    gap: 45px;
+}
+
+.plants {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 10px;
+    border: 3px solid #2C3830;
+    border-radius: 10px;
+    background-color: aliceblue;
+}
+
+.plants p {
+    font-size: 20px;
+    margin: 10px auto;
+}
+
+.container-plants img {
+    width: 150px;
+    height: 150px;
+}
+
+.buy {
+    border-radius: 5px;
+    border: 2px solid #2C3830;
+    background-color: #20e862;
+    width: 100%;
+    height: 40px;
+
+    color: #2C3830;
+    font-family: "K2D",sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+.buy:hover {
+    background-color: #00ff55;
+    scale: 108%;
+}
+
+.modal-header {
+    width: 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 30px;
+}
+
+.close {
+    width: 80px;
+    height: 80px;
+
+    border-radius: 50%;
+    border: 2px solid #2C3830;
+
+    background-color: #20e862;
+    color: #2C3830;
+    font-family: "K2D", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.close:hover {
+    background-color: #00ff55;
+}
+
+.money {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
