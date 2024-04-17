@@ -12,6 +12,34 @@
     }
 }
 
+@keyframes pulse-ground {
+    0% {
+        scale: 100%;
+    }
+    50% {
+        scale: 110%;
+        /* background-color: rgb(254, 150, 31); */
+        /* font-size: 18px; */
+    }
+    100% {
+        scale: 95%;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        scale: 100%;
+    }
+    50% {
+        scale: 110%;
+        background-color: rgb(254, 150, 31);
+        /* font-size: 18px; */
+    }
+    100% {
+        scale: 95%;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -42,6 +70,7 @@ section {
 }
 
 .bg-grass {
+    height: 100vh;
     background-image: url(../assets/grass.jpg);
     background-repeat: repeat;
 }
@@ -66,6 +95,15 @@ section {
     position: absolute;
     top: 0;
     left: 0;
+}
+
+.colheita {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    cursor: pointer;
 }
 
 .farm img {
@@ -116,9 +154,15 @@ section {
 .espantalho {
     height: 100px;
     width: 100px;
+
 }
 
+
 .count-farm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     width: 50px;
     height: 50px;
     margin-bottom: 50px;
@@ -126,14 +170,24 @@ section {
     border: 2px solid aliceblue;
     background-color: rgb(235, 102, 53);
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.391);
+
+    color: aliceblue;
+    font-weight: 800;
+
+    cursor: pointer;
 }
+
+.count-farm:hover {
+    animation: pulse 1s infinite;
+}
+
 
 .plants-layout {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 5px;
 
     width: 450px;
     height: 180px;
@@ -148,15 +202,21 @@ section {
     height: 80px;
     width: 80px;
     border-radius: 10px;
-    border: 2px solid rgb(3, 125, 3);
+    border: 2px solid rgb(70, 37, 0);
     overflow: hidden;
     /* box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.532); */
     /* background-color: rgba(0, 255, 255, 0.584); */
 }
 
+.plants-box:hover {
+    scale: 105%;
+}
+
 .solo-infertil {
     width: 100%;
+    cursor: pointer;
 }
+
 
 .hand-item {
     position: fixed;
@@ -416,12 +476,20 @@ strong {
     background-color: aliceblue;
 
     z-index: 20;
-    color: aliceblue;
+    color: black;
     font-weight: 900;
-    font-size: 24px;
-    -webkit-text-stroke: 1px black;
+    font-size: 20px;
+    /* -webkit-text-stroke: 1px black; */
 }
 
 #foice {
     border-bottom: 2px solid rgba(0, 0, 0, 0.24);
+}
+
+#farm-status {
+    width: 100%;
+}
+
+.counting {
+    animation: pulse-ground 1s infinite;
 }
