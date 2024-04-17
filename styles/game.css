@@ -19,9 +19,8 @@ section {
 }
 
 .bg-grass {
-    background-image: url(../assets/Solo.png);
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-image: url(../assets/grass.jpg);
+    background-repeat: repeat;
 }
 
 .farm {
