@@ -1,3 +1,17 @@
+@keyframes popup {
+    0% {
+        scale: 100%;
+    }
+    60% {
+        scale: 110%;
+        transform: rotate(-1deg);
+    }
+    100% {
+        scale: 115%;
+        transform: rotate(1deg);
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +23,11 @@ body {
     height: 100vh;
 }
 
+::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+}
+
 section {
     display: flex;
     align-items: center;
@@ -16,6 +35,10 @@ section {
 
     width: 100%;
     height: 100vh;
+}
+
+.hide {
+    display: none;
 }
 
 .bg-grass {
@@ -57,10 +80,82 @@ section {
     scale: 105%;
 }
 
+.house-layout {
+    width: 100%;
+    height: 250px;
+    /* background-color: #fff53a82; */
+    background-image: url(../assets/tree-pixelart-final.png);
+    background-size: contain;
+
+}
+
 .house {
-    margin-bottom: 200px;
-    width: 500px;
-    height: 480px;
+    width: 420px;
+    height: 420px;
+
+    margin-left: 60px;
+}
+
+.plants-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    
+    width: 100%;
+    height: auto;
+    /* background-color: rgba(0, 0, 255, 0.469); */
+}
+
+.espantalho-container {
+    display: flex;
+    align-items: center;
+}
+
+.espantalho {
+    height: 100px;
+    width: 100px;
+}
+
+.count-farm {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 50px;
+    border-radius: 50%;
+    border: 2px solid aliceblue;
+    background-color: rgb(235, 102, 53);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.391);
+}
+
+.plants-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    width: 450px;
+    height: 180px;
+
+    /* margin-top: 100px; */
+    /* margin-right: 100px; */
+
+    /* background-color: #faf48995; */
+}
+
+.plants-box {
+    height: 80px;
+    width: 80px;
+    border-radius: 10px;
+    border: 2px solid rgb(3, 125, 3);
+    overflow: hidden;
+    /* box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.532); */
+    /* background-color: rgba(0, 255, 255, 0.584); */
+}
+
+.solo-infertil {
+    width: 100%;
 }
 
 .hand-item {
@@ -71,7 +166,7 @@ section {
     width: 120px;
     height: 120px;
 
-    background-color: rgb(206, 211, 217);
+    background-color: rgba(240, 248, 255, 0.604);
     border: 5px solid aliceblue;
     border-radius: 50%;
     cursor: pointer;
@@ -84,19 +179,25 @@ section {
 
 .items {
     display: flex;
+    flex-direction: column;
+    gap: 20px;
     
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 40px;
+    right: 10px;
     
-    width: auto;
-    height: 100px;
+    width: 80px;
+    height: 70vh;
+    overflow-y: scroll;
+    
+    padding: 10px;
+    border-radius: 100px;
+    border: 3px solid aliceblue;
+    background-color: rgba(240, 248, 255, 0.727);
 }
 
 .items img {
     width: 100%;
-    padding: 10px;
-
     cursor: pointer;
 }
 
@@ -126,15 +227,15 @@ section {
     width: 120px;
     height: 50px;
 
-    border: 3px solid #374C3E;
+    border: 3px solid aliceblue;
     border-radius: 5px;
-    background-color: #fff53a;
+    background-color: rgb(94, 27, 10);
 
     cursor: pointer;
 }
 
 .store:hover {
-    background-color: #faf589;
+    background-color: rgb(253, 162, 139);
 }
 
 .store p {
@@ -142,7 +243,7 @@ section {
     font-size: 24px;
     font-weight: 600;
 
-    color: #2C3830;
+    color: aliceblue;
 }
 
 .modal-store {
@@ -152,15 +253,19 @@ section {
     transform: translate(-50%, -50%);
 
     display: flex;
+    align-items: center;
     flex-direction: column;
 
-    width: 80%;
-    height: 75%;
+    width: 90%;
+    height: 80%;
 
-    border: 5px solid #2C3830;
+    border: 7px solid rgb(94, 27, 10);
     box-shadow: 1px 2px 50px 40px rgba(0, 0, 0, 0.556);
     border-radius: 10px;
-    background-color: #faf589;
+    background-image: url(../assets/store-bg.webp);
+    background-repeat: repeat;
+
+    padding: 20px;
 
     z-index: 999;
     display: none;
@@ -171,9 +276,15 @@ section {
 }
 
 .container-plants { 
+    width: 90%;
+    height: 80%;
+    
     display: flex;
+    align-items: center;
+    justify-content: center;
     margin: auto;
     gap: 45px;
+    /* background-color: #00ff55; */
 }
 
 .plants {
@@ -181,20 +292,28 @@ section {
     flex-direction: column;
     align-items: center;
 
-    padding: 10px;
-    border: 3px solid #2C3830;
+    width: auto;
+
+    padding: 10px 25px;
+    border: 5px solid rgb(255, 120, 86);
     border-radius: 10px;
+    box-shadow: 1px 5px 5px 5px rgba(0, 0, 0, 0.418);
     background-color: aliceblue;
+}
+
+.plants:hover {
+    animation: popup .1s ease-in-out forwards;
+}
+
+.plants img {
+    width: 100px;
+    height: 100px;
+    padding: 10px;
 }
 
 .plants p {
     font-size: 20px;
     margin: 10px auto;
-}
-
-.container-plants img {
-    width: 150px;
-    height: 150px;
 }
 
 .buy {
@@ -215,23 +334,19 @@ section {
 }
 
 .buy:hover {
-    background-color: #00ff55;
-    scale: 108%;
+    background-color: #10ff5f;
 }
 
 .modal-header {
     width: 100%;
-    
     display: flex;
-    align-items: center;
     justify-content: space-between;
-
-    padding: 30px;
 }
 
 .modal-header h1 {
     font-weight: 900;
     font-size: 40px;
+    color: aliceblue;
     font-family: "K2D", sans-serif;
 }
 
@@ -240,10 +355,10 @@ section {
     height: 80px;
 
     border-radius: 50%;
-    border: 2px solid #2C3830;
+    border: 2px solid aliceblue;
 
-    background-color: #20e862;
-    color: #2C3830;
+    background-color: rgb(94, 27, 10);
+    color: aliceblue;
     font-family: "K2D", sans-serif;
     font-weight: 600;
     font-size: 20px;
@@ -251,15 +366,62 @@ section {
 }
 
 .close:hover {
-    background-color: #00ff55;
+    background-color: rgb(253, 162, 139);
 }
 
 .money {
     position: fixed;
     top: 20px;
     left: 20px;
+
+    display: flex;
+    align-items: center;
+
+    color: aliceblue;
+}
+
+.money img {
+    width: 50px;
+    height: 50px;
+    padding: 5px;
 }
 
 strong {
     border-bottom: 1px solid black;
+}
+
+.block-layout {
+    position: relative;
+
+    width: auto;
+    height: auto;
+
+    border-bottom: 2px solid rgba(0, 0, 0, 0.24);
+    padding-bottom: 10px;
+}
+
+.plant-count {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 25px;
+    height: 25px;
+
+    border-radius: 50%;
+    background-color: aliceblue;
+
+    z-index: 20;
+    color: aliceblue;
+    font-weight: 900;
+    font-size: 24px;
+    -webkit-text-stroke: 1px black;
+}
+
+#foice {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.24);
 }

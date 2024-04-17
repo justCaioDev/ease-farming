@@ -14,9 +14,49 @@
 </head>
 <body>
     <div class="bg-grass">
-
-        <section>
-
+        
+        <div class="house-layout">
+            <img src="assets/house-pixelart-final.png" class="house">
+        </div>
+        <div class="plants-container">
+            <div class="espantalho-container">
+                <img src="assets/broken-espantalho-pixelart.webp" class="espantalho">
+                <div class="count-farm"></div>
+            </div>
+            <div class="plants-layout">
+                <div class="plants-box">
+                    <img src="assets/broken-earth0.jpg" class="solo-infertil">
+                </div>
+                <div class="plants-box">
+                    <img src="assets/broken-earth0.jpg" class="solo-infertil">
+                </div>
+                <div class="plants-box">
+                    <img src="assets/broken-earth0.jpg" class="solo-infertil">
+                </div>
+                <div class="plants-box">
+                    <img src="assets/broken-earth0.jpg" class="solo-infertil">
+                </div>
+                <div class="plants-box">
+                    <img src="assets/broken-earth0.jpg" class="solo-infertil">
+                </div>
+                <div class="plants-box">
+                    <img src="assets/broken-earth0.jpg" class="solo-infertil">
+                </div>
+                <div class="plants-box">
+                    <img src="assets/broken-earth0.jpg" class="solo-infertil">
+                </div>
+                <div class="plants-box">
+                    <img src="assets/broken-earth0.jpg" class="solo-infertil">
+                </div>
+                <div class="plants-box">
+                    <img src="assets/broken-earth0.jpg" class="solo-infertil">
+                </div>
+                <div class="plants-box">
+                    <img src="assets/broken-earth0.jpg" class="solo-infertil">
+                </div>
+            </div>
+        </div>
+        <section class="container-house">
             <section class="farm">
                 <div class="plant-box">
                     <img src="assets/colher.png" id="colher0" class="pronto">
@@ -49,28 +89,53 @@
                     <img src="assets/earth.png">
                 </div>
             </section>
-            <img src="assets/house.png" class="house">
-
         </section>
 
         <button id="store" class="store">
             <p>Loja</p>
         </button>
 
-        <h2 class="money">Dinheiro: R$ <span id="dinheiro">0</span></h2>
+        <div class="money"><img src="assets/coin-pixelart.webp"><h2>R$ <span id="dinheiro">0</span></h2></div>
 
         <div class="hand-item">
             <img id="hand-item">
         </div>
 
         <div class="items" id="items">
-            <img id="regador" src="assets/regador.png">
             <img id="hand" src="assets/hand.webp">
-            <img  id="trigo" src="assets/trigo.png">
-            <img  id="couve-flor" src="assets/couve-flor.webp">
-            <img  id="morango" src="assets/morango.webp">
-            <img id="amora" src="assets/amora.webp">
-            <img id="acai" src="assets/acai.png">
+            <img id="regador" src="assets/regador.png">
+            <img id="pa" src="assets/pa-pixelart.webp">
+            <img id="foice" src="assets/foice-pixelart.webp">
+            <div class="block-layout">
+                <div class="plant-count">
+                    <span class="trigo-count" >0</span>
+                </div>
+                <img id="trigo" src="assets/trigo.png">
+            </div>
+            <div class="block-layout">
+                <div class="plant-count">
+                    <span class="amora-count" >0</span>
+                </div>
+                <img id="couve-flor" src="assets/couve-flor.webp">
+            </div>
+            <div class="block-layout">
+                <div class="plant-count">
+                    <span class="batata-count" >0</span>
+                </div>
+                <img id="morango" src="assets/morango.webp">
+            </div>
+            <div class="block-layout">
+                <div class="plant-count">
+                    <span class="couve-flor-count" >0</span>
+                </div>
+                <img id="amora" src="assets/amora.webp">
+            </div>
+            <div class="block-layout">
+                <div class="plant-count">
+                    <span class="morango-count" >0</span>
+                </div>
+                <img id="acai" src="assets/acai.png">
+            </div>
         </div>
 
         <section class="modal-store">
@@ -79,10 +144,9 @@
                 <button id="fechar" class="close">Fechar</button>
             </div>
             <div class="container-plants">
-
                 <div class="trigo plants">
                     <h3>Trigo</h3>
-                    <img src="assets/trigo.png">
+                    <img src="assets/trigo-pixel.webp">
                     <p>R$10</p>
                     <button class="buy" id="buy-trigo">Comprar</button>
                     <strong>Tempo de colheita</strong>
@@ -91,44 +155,44 @@
                     <span>R$13</span>
                 </div>
 
-                <div class="couve-flow plants">
-                    <h3>Couve Flor</h3>
-                    <img src="assets/couve-flor.webp">
+                <div class="amora plants">
+                    <h3>Amora</h3>
+                    <img src="assets/amora-pixel.webp">
                     <p>R$25</p>
-                    <button class="buy" id="buy-couve-flor">Comprar</button>
+                    <button class="buy" id="buy-amora">Comprar</button>
                     <strong>Tempo de colheita</strong>
                     <span>45 segundos</span>
                     <strong>Valor de venda</strong>
                     <span>R$32</span>
                 </div>
 
-                <div class="morango plants">
-                    <h3>Morango</h3>
-                    <img src="assets/morango.webp">
+                <div class="batata plants">
+                    <h3>Batata</h3>
+                    <img src="assets/batata-pixel.webp">
                     <p>R$55</p>
-                    <button class="buy" id="buy-morango">Comprar</button>
+                    <button class="buy" id="buy-batata">Comprar</button>
                     <strong>Tempo de colheita</strong>
                     <span>1 m</span>
                     <strong>Valor de venda</strong>
                     <span>R$78</span>
                 </div>
 
-                <div class="amora plants">
-                    <h3>Amora</h3>
-                    <img src="assets/amora.webp">
+                <div class="couve-flor plants">
+                    <h3>Couve Flor</h3>
+                    <img src="assets/couve-flor-pixel.webp">
                     <p>R$120</p>
-                    <button class="buy" id="buy-amora">Comprar</button>
+                    <button class="buy" id="buy-couve-flor">Comprar</button>
                     <strong>Tempo de colheita</strong>
                     <span>1 m 30 segundos</span>
                     <strong>Valor de venda</strong>
                     <span>R$150</span>
                 </div>
 
-                <div class="acai plants">
-                    <h3>Açaí</h3>
-                    <img src="assets/acai.png">
+                <div class="morango plants">
+                    <h3>Morango</h3>
+                    <img src="assets/morango-pixel.webp">
                     <p>R$300</p>
-                    <button class="buy" id="buy-acai">Comprar</button>
+                    <button class="buy" id="buy-morango">Comprar</button>
                     <strong>Tempo de colheita</strong>
                     <span>3 m 10 segundos</span>
                     <strong>Valor de venda</strong>
