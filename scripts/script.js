@@ -21,12 +21,12 @@ const farmStatus = document.querySelector("#farm-status");
 const dropArea = document.querySelector(".coin-drop");
 
 // Sons
-const coinBuySound = new Audio("../assets/coin-buy.mp3");
-const coinSound = new Audio("../assets/coin.mp3");
-const foiceSound = new Audio("../assets/foice.mp3");
-const paSound = new Audio("../assets/shovel.mp3");
-const plantandoSound = new Audio("../assets/plantando.mp3");
-const regadorSound = new Audio("../assets/regador.mp3");
+const coinBuySound = new Audio("scripts/coin-buy.mp3");
+const coinSound = new Audio("scripts/coin.mp3");
+const foiceSound = new Audio("scripts/foice.mp3");
+const paSound = new Audio("scripts/shovel.mp3");
+const plantandoSound = new Audio("scripts/plantando.mp3");
+const regadorSound = new Audio("scripts/regador.mp3");
 
 
 // Plantações
@@ -85,11 +85,11 @@ let couvesFlor = 0;
 let morangos = 0;
 
 function backgroundMusic() {
-    const music01 = new Audio("../assets/bg-music01.mp3")
-    const music02 = new Audio("../assets/bg-music02.mp3")
-    const music03 = new Audio("../assets/bg-music03.mp3")
-    const music04 = new Audio("../assets/bg-music04.mp3")
-    const music05 = new Audio("../assets/bg-music05.mp3")
+    const music01 = new Audio("scripts/bg-music01.mp3")
+    const music02 = new Audio("scripts/bg-music02.mp3")
+    const music03 = new Audio("scripts/bg-music03.mp3")
+    const music04 = new Audio("scripts/bg-music04.mp3")
+    const music05 = new Audio("scripts/bg-music05.mp3")
 
     let max = 6
     let min = 1
