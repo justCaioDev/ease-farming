@@ -127,3 +127,32 @@ footer {
 }
 
 
+@media screen and (max-width: 1000px) {
+    .container-menu h1 {
+        font-size: 40px;
+    }
+
+    .title {
+        margin: 0;
+    }
+
+    button {
+        width: 100%;
+        height: 80px;
+    }
+
+    .start button p {
+        font-size: 36px;
+    }
+
+    .container-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .start {
+        height: auto;
+    }
+}
