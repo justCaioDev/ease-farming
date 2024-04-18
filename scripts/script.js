@@ -96,7 +96,7 @@ function backgroundMusic() {
     const music04 = new Audio("scripts/bg-music04.mp3")
     const music05 = new Audio("scripts/bg-music05.mp3")
 
-    let max = 6
+    let max = 5
     let min = 1
     let randomMusic = Math.floor(Math.random() * (max - min)) + min
     
