@@ -899,3 +899,4 @@ textoBtn.addEventListener("click", ()=> {
     tutorial.classList.add("hide-tutorial")
     textTutorial.textContent = ""
 })
+
