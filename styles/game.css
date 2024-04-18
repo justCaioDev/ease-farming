@@ -71,7 +71,7 @@ section {
 
 .bg-grass {
     height: 100vh;
-    background-image: url(../assets/grass.jpg);
+    background-image: url(../assets/grass.webp);
     background-repeat: repeat;
 }
 

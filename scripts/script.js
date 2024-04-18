@@ -880,12 +880,3 @@ priceEspantalho.addEventListener("click", ()=> {
 })   
 
 priceEspantalho.addEventListener("click", backgroundMusic)
-
-
-
-
-
-
-
-
-
