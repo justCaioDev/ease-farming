@@ -18,6 +18,8 @@ const priceEspantalho = document.querySelector(".espantalho-price");
 
 const farmStatus = document.querySelector("#farm-status");
 
+const dropArea = document.querySelector(".coin-drop");
+
 // Sons
 const coinBuySound = new Audio("../assets/coin-buy.mp3");
 const coinSound = new Audio("../assets/coin.mp3");
@@ -72,6 +74,8 @@ const colher7 = document.querySelector("#colher7");
 const colher8 = document.querySelector("#colher8");
 const colher9 = document.querySelector("#colher9");
 
+
+
 let dinheiroJogador = 60;
 
 let trigos = 0;
@@ -115,8 +119,46 @@ function backgroundMusic() {
     setTimeout(backgroundMusic, 180000)
 }
 
-backgroundMusic()
+function dropCoin() {
+    const drop = document.createElement("div");
+    drop.classList.add("drop");
+    let maxDrop = 101
+    let minDrop = 0
+    const marginTopRandom = Math.floor(Math.random() * (maxDrop - minDrop)) + minDrop;
+    const marginLeftRandom = Math.floor(Math.random() * (maxDrop - minDrop)) + minDrop;
 
+    let top = marginTopRandom - 30
+    let left = marginLeftRandom - 30
+
+    if (top < 0){
+        top = top + 30
+    }
+    if (left < 0){
+       left = left + 30
+    }
+
+    drop.style.top = top + "%"
+    drop.style.left = left + "%"
+    
+    drop.addEventListener("click", coletarCoin)
+
+    dropArea.appendChild(drop)
+
+    setTimeout(dropCoin, 90000) 
+
+}
+
+function coletarCoin() {
+    coinSound.play()
+    dinheiroJogador = dinheiroJogador + 2
+    dinheiro.textContent = dinheiroJogador
+
+    this.remove()
+}
+
+
+
+dropCoin()
 
 function ararSolo() {
     if(farmStatus.getAttribute("src") == "assets/pa-pixelart.webp" && plant0.getAttribute("src") == "assets/broken-earth0.webp" && handItem.getAttribute("src") == "assets/pa-pixelart.webp"){
@@ -132,7 +174,7 @@ function ararSolo() {
         plant9.setAttribute("src", "assets/earth0.jpg")
 
         farmStatus.setAttribute("src", "assets/regador-pixelart.webp")
-
+        
         paSound.play()
     }
 }
@@ -149,16 +191,17 @@ function regarSolo() {
         plant7.setAttribute("src", "assets/earth.webp")
         plant8.setAttribute("src", "assets/earth.webp")
         plant9.setAttribute("src", "assets/earth.webp")
-
+        
         farmStatus.classList.remove("counting")
         farmStatus.classList.add("hide")
-
+        
         regadorSound.play()
     }
 }
 
 function comprarEspantalho() {
     if(priceEspantalho.textContent = "R$50" && dinheiroJogador >= 50) {
+        
         espantalho.setAttribute("src", "assets/espantalho-pixelart.webp")
 
         dinheiroJogador = dinheiroJogador - 50
@@ -834,7 +877,9 @@ priceEspantalho.addEventListener("click", ()=> {
     comprarEspantalho()
     farmStatus.classList.remove("hide")
     coinBuySound.play()
-})    
+})   
+
+priceEspantalho.addEventListener("click", backgroundMusic)
 
 
 
