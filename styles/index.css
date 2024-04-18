@@ -49,7 +49,9 @@ a {
     width: 100%;
     height: 100vh;
 
-    background-image: url(../assets/Background-menu.png);
+    position: relative;
+
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.082), rgba(0, 0, 0, 0.634)), url(../assets/wallpaper-menu.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom center;
@@ -59,8 +61,15 @@ a {
     width: 100%;
     height: 100vh;
 
+    padding: 50px 100px;
+
     display: flex;
     flex-direction: column;
+    align-items: start;
+}
+
+.title {
+    margin: 80px 0;
 }
 
 .container-menu h1 {
@@ -68,64 +77,53 @@ a {
 
     font-size: 96px;
     color: #FDE46E;
-    text-shadow:
-    -1px -1px 0 #374C3E,  
-     1px -1px 0 #374C3E,
-    -1px  1px 0 #374C3E,
-     1px  1px 0 #374C3E;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.539);
 }
 
 .start {
     display: flex;
     flex-direction: column;
+    align-items: start;
 
-    position: relative;
-
-    margin: auto;
-    width: 400px;
-    height: 100px;
+    width: 100%;
+    height: 100vh;
 }
 
-.start button {
-    position: absolute;
-
-    scale: 0;
-    width: 400px;
-    height: 100px;
-    margin: auto;
+button {
+    width: 350px;
+    height: 90px;
 
     border-radius: 10px;
-    border: 5px solid #374C3E;
-    background-color: #68FE77;
-    cursor: pointer;
-    box-shadow: 0px 10px 10px  rgba(0, 0, 0, 0.531);
+    border: 2px solid aliceblue;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.433);
 
-    animation: appear-button .5s ease-in-out forwards;
-    animation-delay: 3s;
+    background-color: brown;
 }
+
 
 .start button p {
     font-family: "K2D", sans-serif;
-    font-size: 64px;
-    font-weight: 600;
+    font-size: 60px;
+    font-weight: 500;
     font-style: normal;
-    color: #2C3830;
+    color: aliceblue;
 }
 
 .start button:hover {
-    background-color: #1cff32;
-    scale: 105%;
+    background-color: rgb(235, 35, 35);
 }
 
-.start .load {
-    width: 50px;
-    height: 50px;
-    margin: auto;
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 
-    border: 5px solid aliceblue;
-    border-radius: 50%;
-    border-bottom-color: transparent;
-    animation: spin 1s linear 10;
-    /* animation: desappear-load-spin 1s backwards; */
+    text-align: center;
+    font-weight: 600;
+    color: rgb(201, 201, 201);
 
+    padding: 20px;
 }
+
+
