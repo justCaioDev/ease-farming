@@ -705,6 +705,7 @@ strong {
         /* background-color: #10ff5f; */
         overflow-y: scroll;
         justify-content: start;
+        padding: 25px;
     }
 
     .modal-store {
