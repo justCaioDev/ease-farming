@@ -11,6 +11,11 @@ const fechar = document.querySelector("#fechar");
 const dinheiro = document.querySelector("#dinheiro");
 const items = document.querySelector("#items");
 
+// Tutorial
+const textoBtn = document.querySelector(".text-btn");
+const textTutorial = document.querySelector(".texto");
+const tutorial = document.querySelector(".tutorial-text");
+
 const countFarm = document.querySelector(".count-farm");
 
 const espantalho = document.querySelector("#espantalho");
@@ -174,6 +179,9 @@ function ararSolo() {
         plant9.setAttribute("src", "assets/earth0.jpg")
 
         farmStatus.setAttribute("src", "assets/regador-pixelart.webp")
+
+        tutorial.classList.remove("hide-tutorial")
+        textTutorial.textContent = "Agora vamos regar usando o regador na barra de inventário."
         
         paSound.play()
     }
@@ -194,6 +202,9 @@ function regarSolo() {
         
         farmStatus.classList.remove("counting")
         farmStatus.classList.add("hide")
+
+        tutorial.classList.remove("hide-tutorial")
+        textTutorial.textContent = "Que tal entrar na loja agora e comprar algo para plantar? Cada plantação tem seu próprio tempo de colheita."
         
         regadorSound.play()
     }
@@ -208,6 +219,9 @@ function comprarEspantalho() {
         dinheiro.textContent = dinheiroJogador
 
         priceEspantalho.textContent = ""
+
+        tutorial.classList.remove("hide-tutorial")
+        textTutorial.textContent = "Use a pá para preparar o solo infértil."
 
         farmStatus.classList.add("counting")
     }
@@ -880,3 +894,8 @@ priceEspantalho.addEventListener("click", ()=> {
 })   
 
 priceEspantalho.addEventListener("click", backgroundMusic)
+
+textoBtn.addEventListener("click", ()=> {
+    tutorial.classList.add("hide-tutorial")
+    textTutorial.textContent = ""
+})

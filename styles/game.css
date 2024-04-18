@@ -524,3 +524,88 @@ strong {
 
     animation: pulse-ground 1s infinite;
 }
+
+.tutorial-layout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    width: 100%;
+    height: 100vh;
+    
+    pointer-events: none;
+    
+    /* background-color: rgba(165, 42, 42, 0.309); */
+    
+}
+
+.tutorial-container {
+    position: relative;
+    
+    width: 100%;
+    height: 100vh;
+
+    pointer-events: none;
+
+    /* background-color: rgba(199, 114, 235, 0.36); */
+}
+
+.tutorial {
+    position: absolute;
+    top: 90px;
+    left: 50px;
+
+    display: flex;
+    
+    width: auto;
+    height: auto;
+
+    /* background-color: rgba(127, 255, 212, 0.668); */
+}
+
+
+.tutorial-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+    width: 500px;
+    height: 200px;
+
+    padding: 25px;
+    border-radius: 10px;
+
+    background-color: bisque;
+    box-shadow: 2px 4px 10px 10px rgba(0, 0, 0, 0.404);
+}
+
+.text-btn {
+    width: 100px;
+    height: 30px;
+
+    border-radius: 5px;
+    border: 3px solid aliceblue;
+
+    color: aliceblue;
+    background-color: brown;
+    font-weight: 600;
+
+    cursor: pointer;
+    pointer-events: visible;
+
+    animation: pulse-ground 1.5s infinite;
+}
+
+.texto {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.text-btn:hover {
+    background-color: rgb(137, 4, 4);
+}
+
+.hide-tutorial {
+    display: none;
+}
