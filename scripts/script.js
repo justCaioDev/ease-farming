@@ -18,6 +18,15 @@ const priceEspantalho = document.querySelector(".espantalho-price");
 
 const farmStatus = document.querySelector("#farm-status");
 
+// Sons
+const coinBuySound = new Audio("../assets/coin-buy.mp3");
+const coinSound = new Audio("../assets/coin.mp3");
+const foiceSound = new Audio("../assets/foice.mp3");
+const paSound = new Audio("../assets/shovel.mp3");
+const plantandoSound = new Audio("../assets/plantando.mp3");
+const regadorSound = new Audio("../assets/regador.mp3");
+
+
 // Plantações
 const trigo = document.querySelector("#trigo");
 const amora = document.querySelector("#amora");
@@ -71,6 +80,44 @@ let batatas = 0;
 let couvesFlor = 0;
 let morangos = 0;
 
+function backgroundMusic() {
+    const music01 = new Audio("../assets/bg-music01.mp3")
+    const music02 = new Audio("../assets/bg-music02.mp3")
+    const music03 = new Audio("../assets/bg-music03.mp3")
+    const music04 = new Audio("../assets/bg-music04.mp3")
+    const music05 = new Audio("../assets/bg-music05.mp3")
+
+    let max = 6
+    let min = 1
+    let randomMusic = Math.floor(Math.random() * (max - min)) + min
+    
+    if (randomMusic == 1){
+        music01.play()
+        console.log(randomMusic)
+    }
+    if (randomMusic == 2){
+        music02.play()
+        console.log(randomMusic)
+    }
+    if (randomMusic == 3){
+        music03.play()
+        console.log(randomMusic)
+    }
+    if (randomMusic == 4){
+        music04.play()
+        console.log(randomMusic)
+    }
+    if (randomMusic == 6){
+        music05.play()
+        console.log(randomMusic)
+    }
+
+    setTimeout(backgroundMusic, 180000)
+}
+
+backgroundMusic()
+
+
 function ararSolo() {
     if(farmStatus.getAttribute("src") == "assets/pa-pixelart.webp" && plant0.getAttribute("src") == "assets/broken-earth0.webp" && handItem.getAttribute("src") == "assets/pa-pixelart.webp"){
         plant0.setAttribute("src", "assets/earth0.jpg")
@@ -85,6 +132,8 @@ function ararSolo() {
         plant9.setAttribute("src", "assets/earth0.jpg")
 
         farmStatus.setAttribute("src", "assets/regador-pixelart.webp")
+
+        paSound.play()
     }
 }
 
@@ -103,6 +152,8 @@ function regarSolo() {
 
         farmStatus.classList.remove("counting")
         farmStatus.classList.add("hide")
+
+        regadorSound.play()
     }
 }
 
@@ -441,6 +492,8 @@ function comprarTrigo() {
 
         trigos = trigos + 1
         countTrigo.textContent = trigos
+
+        coinBuySound.play()
     } else {
         alert("Dinheiro insuficiente!")
     }
@@ -459,6 +512,8 @@ function comprarAmora() {
 
         amoras = amoras + 1
         countAmora.textContent = amoras
+
+        coinBuySound.play()
     } else {
         alert("Dinheiro insuficiente!")
     }
@@ -477,6 +532,8 @@ function comprarBatata() {
 
         batatas = batatas + 1
         countBatata.textContent = batatas
+
+        coinBuySound.play()
     } else {
         alert("Dinheiro insuficiente!")
     }
@@ -495,6 +552,8 @@ function comprarCouveFlor() {
 
         couvesFlor = couvesFlor + 1
         countCouveFlor.textContent = couvesFlor
+
+        coinBuySound.play()
     } else {
         alert("Dinheiro insuficiente!")
     }
@@ -513,6 +572,8 @@ function comprarMorango() {
 
         morangos = morangos + 1
         countMorango.textContent = morangos 
+
+        coinBuySound.play()
     } else {
         alert("Dinheiro insuficiente!")
     }
@@ -587,58 +648,74 @@ plant0.addEventListener("click", () => {
     plantar()
     ararSolo()
     regarSolo()
+    plantandoSound.play()
 });    
 plant1.addEventListener("click", () => {
     plantar();
     ararSolo()
     regarSolo()
+    plantandoSound.play()
 });    
 plant2.addEventListener("click", () => {
     plantar();
     ararSolo()
     regarSolo()
+    plantandoSound.play()
 });    
 plant3.addEventListener("click", () => {
     plantar();
     ararSolo()
     regarSolo()
+    plantandoSound.play()
 });    
 plant4.addEventListener("click", () => {
     plantar();
     ararSolo()
     regarSolo()
+    plantandoSound.play()
 });    
 plant5.addEventListener("click", () => {
     plantar();
     ararSolo()
     regarSolo()
+    plantandoSound.play()
 });    
 plant6.addEventListener("click", () => {
     plantar();
     ararSolo()
     regarSolo()
+    plantandoSound.play()
 });    
 plant7.addEventListener("click", () => {
     plantar();
     ararSolo()
     regarSolo()
+    plantandoSound.play()
 });    
 plant8.addEventListener("click", () => {
     plantar();
     ararSolo()
     regarSolo()
+    plantandoSound.play()
 });    
 plant9.addEventListener("click", () => {
     plantar();
     ararSolo()
     regarSolo()
+    plantandoSound.play()
 });    
+
+function coinSoundColheita() {
+    coinSound.play()
+}
 
 
 // Eventos de click para colher
 colher0.addEventListener("click", ()=> {
     if (handItem.getAttribute("src") == "assets/foice-pixelart.webp") {
         colherPlantacao();
+        foiceSound.play()
+        setTimeout(coinSoundColheita, 500)
     } else {
         alert("Selecione a mão para colher!")
     }    
@@ -646,6 +723,8 @@ colher0.addEventListener("click", ()=> {
 colher1.addEventListener("click", ()=> {
     if (handItem.getAttribute("src") == "assets/foice-pixelart.webp") {
         colherPlantacao();
+        foiceSound.play()
+        setTimeout(coinSoundColheita, 500)
     } else {
         alert("Selecione a mão para colher!")
     }    
@@ -653,6 +732,8 @@ colher1.addEventListener("click", ()=> {
 colher2.addEventListener("click", ()=> {
     if (handItem.getAttribute("src") == "assets/foice-pixelart.webp") {
         colherPlantacao();
+        foiceSound.play()
+        setTimeout(coinSoundColheita, 500)
     } else {
         alert("Selecione a mão para colher!")
     }    
@@ -660,6 +741,8 @@ colher2.addEventListener("click", ()=> {
 colher3.addEventListener("click", ()=> {
     if (handItem.getAttribute("src") == "assets/foice-pixelart.webp") {
         colherPlantacao();
+        foiceSound.play()
+        setTimeout(coinSoundColheita, 500)
     } else {
         alert("Selecione a mão para colher!")
     }    
@@ -667,6 +750,8 @@ colher3.addEventListener("click", ()=> {
 colher4.addEventListener("click", ()=> {
     if (handItem.getAttribute("src") == "assets/foice-pixelart.webp") {
         colherPlantacao();
+        foiceSound.play()
+        setTimeout(coinSoundColheita, 500)
     } else {
         alert("Selecione a mão para colher!")
     }    
@@ -674,6 +759,8 @@ colher4.addEventListener("click", ()=> {
 colher5.addEventListener("click", ()=> {
     if (handItem.getAttribute("src") == "assets/foice-pixelart.webp") {
         colherPlantacao();
+        foiceSound.play()
+        setTimeout(coinSoundColheita, 500)
     } else {
         alert("Selecione a mão para colher!")
     }    
@@ -681,6 +768,8 @@ colher5.addEventListener("click", ()=> {
 colher6.addEventListener("click", ()=> {
     if (handItem.getAttribute("src") == "assets/foice-pixelart.webp") {
         colherPlantacao();
+        foiceSound.play()
+        setTimeout(coinSoundColheita, 500)
     } else {
         alert("Selecione a mão para colher!")
     }    
@@ -688,6 +777,8 @@ colher6.addEventListener("click", ()=> {
 colher7.addEventListener("click", ()=> {
     if (handItem.getAttribute("src") == "assets/foice-pixelart.webp") {
         colherPlantacao();
+        foiceSound.play()
+        setTimeout(coinSoundColheita, 500)
     } else {
         alert("Selecione a mão para colher!")
     }    
@@ -695,6 +786,8 @@ colher7.addEventListener("click", ()=> {
 colher8.addEventListener("click", ()=> {
     if (handItem.getAttribute("src") == "assets/foice-pixelart.webp") {
         colherPlantacao();
+        foiceSound.play()
+        setTimeout(coinSoundColheita, 500)
     } else {
         alert("Selecione a mão para colher!")
     }    
@@ -702,6 +795,8 @@ colher8.addEventListener("click", ()=> {
 colher9.addEventListener("click", ()=> {
     if (handItem.getAttribute("src") == "assets/foice-pixelart.webp") {
         colherPlantacao();
+        foiceSound.play()
+        setTimeout(coinSoundColheita, 500)
     } else {
         alert("Selecione a mão para colher!")
     }    
@@ -738,6 +833,7 @@ buyMorango.addEventListener("click", ()=> {
 priceEspantalho.addEventListener("click", ()=> {
     comprarEspantalho()
     farmStatus.classList.remove("hide")
+    coinBuySound.play()
 })    
 
 
